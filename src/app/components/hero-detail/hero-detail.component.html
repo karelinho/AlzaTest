@@ -1,0 +1,20 @@
+@if(hero){
+    <div>
+      <h1>{{ hero.name | uppercase }} Details!</h1>
+      <div class="item-container">
+        <div class="item-wrapper">
+            <div class="item-label">id:</div>
+            <div class="item-value">{{hero.id}}</div>
+        </div>
+        <div class="item-wrapper">
+            <div class="item-label">name:</div>
+            <div class="item-value">
+                <input #heroinput class="hero-name-input" [ngModel]="hero.name" (ngModelChange)="isExisting(heroinput.value)">
+            </div>
+        </div>
+      </div>
+      <button type="button" (click)="back()">Back</button>
+      <button type="button" (click)="save(heroinput.value)" [disabled]="exists() || isEmpty(heroinput.value)">Save</button>
+      <button type="button" (click)="delete()">Remove</button>
+    </div>
+}

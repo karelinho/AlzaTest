@@ -1,0 +1,33 @@
+app-dashboard {
+    display: block;
+    margin: 20px;
+
+    h1 {
+        text-align: center;
+    }
+
+    .top-heroes-list {
+        display: flex;
+    }
+
+    .top-hero-item {
+        margin: 5px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        flex-grow: 1;
+
+    }
+
+    .top-hero-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        padding: 0 10px;
+        flex-grow: 1;
+        background-color: darkblue;
+        color: white;
+    }
+}

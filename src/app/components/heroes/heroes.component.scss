@@ -1,0 +1,54 @@
+app-heroes {
+    display: block;
+    margin: 20px;
+
+    .heroes-top-box {
+        display: flex;
+        flex-direction: row;
+
+        .button-box {
+            margin-left: auto;
+        }
+    }
+
+    .hero-row {
+        margin: 5px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+
+    }
+
+    .hero-name,
+    .hero-id {
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-name {
+        font-weight: bold;
+        padding: 0 10px;
+        flex-grow: 1;
+        background-color: lightgray;
+        &.active {
+            background-color: aqua;
+        }
+    }
+
+    .hero-id {
+        justify-content: center;
+        width: 50px;
+        color: white;
+        background-color: darkblue;
+    }
+
+    .selected-hero-name {
+        font-size: 24px;
+        margin: 20px 0;
+    }
+
+    .selected-hero-edit {
+        margin-bottom: 20px;
+    }
+}

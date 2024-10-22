@@ -1,0 +1,22 @@
+<div class="heroes-top-box">
+    <h1>My Heroes</h1>
+    <div class="button-box">
+        <button mat-stroked-button routerLink="/create-hero">Create Hero</button>
+    </div>
+</div>
+<div class="heroes-list">
+    @for (hero of heroes; track hero.id) {
+        <div class="hero-row" (click)="handleHeroClick(hero)">
+            <div class="hero-id">{{ hero.id }}</div>
+            <div class="hero-name" highlightLongNameHero [ngClass]="{ 'active': (selectedHero && selectedHero.name === hero.name) }">{{ hero.name }}</div>
+        </div>
+    }
+</div>
+@if (selectedHero) {
+    <div class="selected-hero-name">
+        {{ selectedHero.name | uppercase }} is my hero
+    </div>
+    <div class="selected-hero-edit">
+        <a routerLink="/detail/{{selectedHero.id}}" class="hero-button">View Details</a>
+    </div>
+}

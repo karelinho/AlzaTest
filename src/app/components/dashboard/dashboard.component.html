@@ -1,0 +1,8 @@
+<h1>Top Heroes</h1>
+<div class="top-heroes-list">
+    @for (hero of heroes; track hero.id) {
+        <div class="top-hero-item" routerLink="/detail/{{hero.id}}">
+            <div class="top-hero-name">{{ hero.name }}</div>
+        </div>
+    }
+</div>

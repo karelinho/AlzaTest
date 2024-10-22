@@ -1,0 +1,13 @@
+<h1>Create Hero</h1>
+<div class="item-container">
+    <div class="item-wrapper">
+        <div class="item-label">name:</div>
+        <div class="item-value">
+            <input class="hero-name-input" [(ngModel)]="heroName" />
+        </div>
+    </div>
+</div>
+<button type="button" (click)="create()" [disabled]="isEmpty(heroName)">Create</button>
+@for(heroItem of createdHeroes; track heroItem.id) {
+    <div class="message-item">Hero with id: {{ heroItem.id }} and name: {{ heroItem.name }} was created</div>
+}

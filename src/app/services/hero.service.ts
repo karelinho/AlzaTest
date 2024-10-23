@@ -69,7 +69,7 @@ export class HeroService {
    */
   createHero(name: string): Hero {
     const hero = {
-      id: this.heroes.slice(-1)[0].id + 1,
+      id: (this.heroes.length > 0) ? (this.heroes.slice(-1)[0].id + 1) : 1,
       name: name
     };
     this.heroes.push(hero);

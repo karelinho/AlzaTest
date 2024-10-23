@@ -5,4 +5,7 @@
             <div class="top-hero-name">{{ hero.name }}</div>
         </div>
     }
+    @if (heroes.length === 0) {
+        <h1>There are no top heroes.</h1>
+    }
 </div>

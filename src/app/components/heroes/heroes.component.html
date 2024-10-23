@@ -11,6 +11,9 @@
             <div class="hero-name" highlightLongNameHero [ngClass]="{ 'active': (selectedHero && selectedHero.name === hero.name) }">{{ hero.name }}</div>
         </div>
     }
+    @if (heroes.length === 0) {
+        <h1>There are no heroes. Please create new.</h1>
+    }
 </div>
 @if (selectedHero) {
     <div class="selected-hero-name">

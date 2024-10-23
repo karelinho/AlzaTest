@@ -17,7 +17,8 @@ import { NgFor } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent {
-  
+
+  /** Contains all heroes with top property equal to true. */
   public heroes: Hero[] = [];
 
   constructor(private heroService: HeroService) {

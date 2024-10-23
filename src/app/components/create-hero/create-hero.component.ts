@@ -18,19 +18,29 @@ import { NgFor } from '@angular/common';
 })
 export class CreateHeroComponent {
 
+  /** Hero name used in input. */
   heroName: string = '';
 
+  /** Contains created heroes. */
   createdHeroes: Hero[] = [];
 
   constructor(private heroService: HeroService) {}
 
+  /**
+   * Creates a new hero and clears input.
+   */
   create() {
     const hero = this.heroService.createHero(this.heroName);
     this.createdHeroes.push(hero);
     this.heroName = '';
   }
 
-  isEmpty(value: string): boolean {
-    return value.trim() === '';
+  /**
+   * Checks if hero name is empty.
+   * @param name - hero name 
+   * @returns 
+   */
+  isEmpty(name: string): boolean {
+    return name.trim() === '';
   }
 }

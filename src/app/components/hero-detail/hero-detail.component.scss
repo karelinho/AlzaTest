@@ -2,31 +2,6 @@ app-hero-detail {
     display: block;
     margin: 20px;
 
-    input {
-        padding: 5px;
-    }
-
-    button {
-        margin-top: 20px;
-        margin-right: 10px;
-    }
-
-    .item-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .item-wrapper {
-        display: flex;
-        flex-direction: row;
-        padding: 10px 0;
-        align-items: center;
-    }
-
-    .item-label {
-        width: 50px;
-    }
-
     .warning {
         margin: 10px 0;
     }

@@ -1,3 +1,4 @@
+// styles for buttons used accros components
 a.hero-button {
     text-decoration: none;
     cursor: pointer;
@@ -12,4 +13,31 @@ a.hero-button {
 
 a.hero-button.active {
     color: rgb(36, 134, 167);
+}
+
+// styles for create-hero and hero-detail
+input {
+    padding: 5px;
+}
+
+button {
+    margin-top: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.item-label {
+    width: 50px;
 }

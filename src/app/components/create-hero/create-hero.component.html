@@ -7,7 +7,7 @@
         </div>
     </div>
 </div>
-<button type="button" (click)="create()" [disabled]="isEmpty(heroName)">Create</button>
+<button class="create-button" type="button" (click)="create()" [disabled]="isEmpty(heroName)">Create</button>
 @for(heroItem of createdHeroes; track heroItem.id) {
     <div class="message-item">Hero with id: {{ heroItem.id }} and name: {{ heroItem.name }} was created</div>
 }

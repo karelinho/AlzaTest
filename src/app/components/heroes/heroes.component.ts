@@ -27,14 +27,20 @@ import { CreateHeroComponent } from '../create-hero/create-hero.component';
 })
 export class HeroesComponent {
 
+  /** List of existing heroes. */
   public heroes: Hero[] = [];
 
+  /** Selected hero. */
   public selectedHero!: Hero;
 
   constructor(private heroService: HeroService) {
     this.heroes = this.heroService.getHeroes();
   }
 
+  /**
+   * Handles hero click.
+   * @param hero - hero object
+   */
   public handleHeroClick(hero: Hero) {
     this.selectedHero = hero;
   }

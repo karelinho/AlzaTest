@@ -19,8 +19,11 @@ import { FormsModule } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroDetailComponent {
+
+  /** Contains selected hero. */
   hero!: Hero;
 
+  /** Flag that indicates if hero name exists. */
   exists = signal(true);
 
   constructor(
@@ -31,29 +34,51 @@ export class HeroDetailComponent {
     this.getHero();
   }
   
+  /**
+   * Fills hero with id obtained from url.
+   */
   getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.hero = this.heroService.getHero(id);
   }
 
+  /**
+   * Navigates to previous screen.
+   */
   back(): void {
     this.location.back();
   }
 
-  save(value: string): void {
-    this.heroService.updateHero(this.hero.id, value);
+  /**
+   * Updates selected hero name.
+   * @param name - hero name
+   */
+  save(name: string): void {
+    this.heroService.updateHero(this.hero.id, name);
   }
 
+  /**
+   * Removes selected hero and navigates to previous screen.
+   */
   delete() {
     this.heroService.deleteHero(this.hero.id);
     this.back();
   }
 
-  isExisting(value: string) {
-    this.exists.set(this.heroService.isHeroExisting(value));
+  /**
+   * Checks whether hero with provided name exists.
+   * @param name - hero name 
+   */
+  isExisting(name: string) {
+    this.exists.set(this.heroService.isHeroExisting(name));
   }
 
-  isEmpty(value: string): boolean {
-    return value.trim() === '';
+  /**
+   * Checks whether the hero name is empty.
+   * @param name - hero name
+   * @returns 
+   */
+  isEmpty(name: string): boolean {
+    return name.trim() === '';
   }
 }

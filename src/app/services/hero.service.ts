@@ -65,12 +65,14 @@ export class HeroService {
   /**
    * Creates a new hero with provided name and adds it under the last hero id + 1 to the array of heroes.
    * @param name - hero name
+   * @param top - if hero is topped
    * @returns 
    */
-  createHero(name: string): Hero {
+  createHero(name: string, top: boolean): Hero {
     const hero = {
       id: (this.heroes.length > 0) ? (this.heroes.slice(-1)[0].id + 1) : 1,
-      name: name
+      name: name,
+      top: top
     };
     this.heroes.push(hero);
     return hero;

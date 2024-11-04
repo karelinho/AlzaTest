@@ -21,6 +21,9 @@ export class CreateHeroComponent {
   /** Hero name used in input. */
   heroName: string = '';
 
+  /** Hero top flag. */
+  heroTop = false;
+
   /** Contains created heroes. */
   createdHeroes: Hero[] = [];
 
@@ -30,9 +33,10 @@ export class CreateHeroComponent {
    * Creates a new hero and clears input.
    */
   create() {
-    const hero = this.heroService.createHero(this.heroName);
+    const hero = this.heroService.createHero(this.heroName, this.heroTop);
     this.createdHeroes.push(hero);
     this.heroName = '';
+    this.heroTop = false;
   }
 
   /**

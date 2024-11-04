@@ -8,6 +8,8 @@ app-dashboard {
 
     .top-heroes-list {
         display: flex;
+        flex-wrap: wrap;
+        width: 100%;
     }
 
     .top-hero-item {
@@ -17,7 +19,6 @@ app-dashboard {
         flex-direction: column;
         height: 100px;
         flex-grow: 1;
-
     }
 
     .top-hero-name {

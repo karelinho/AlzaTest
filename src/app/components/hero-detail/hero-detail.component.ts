@@ -55,6 +55,7 @@ export class HeroDetailComponent {
    */
   save(name: string): void {
     this.heroService.updateHero(this.hero.id, name);
+    this.exists.set(true);
   }
 
   /**

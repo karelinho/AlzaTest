@@ -6,6 +6,12 @@
             <input class="hero-name-input" [(ngModel)]="heroName" />
         </div>
     </div>
+    <div class="item-wrapper">
+        <div class="item-label">top:</div>
+        <div class="item-value">
+            <input type="checkbox" [(ngModel)]="heroTop" />
+        </div>
+    </div>
 </div>
 <button class="create-button" type="button" (click)="create()" [disabled]="isEmpty(heroName)">Create</button>
 @for(heroItem of createdHeroes; track heroItem.id) {

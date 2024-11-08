@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../interfaces';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +27,8 @@ export class HeroService {
    * Returns an array of heroes.
    * @returns array of heroes
    */
-  getHeroes(): Hero[] {
-    return this.heroes;
+  getHeroes(): Observable<Hero[]> {
+    return of(this.heroes);
   }
 
   /**

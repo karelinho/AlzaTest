@@ -3,7 +3,7 @@
     <div class="item-wrapper">
         <div class="item-label">name:</div>
         <div class="item-value">
-            <input class="hero-name-input" [(ngModel)]="heroName" />
+            <input #heroinput class="hero-name-input" [(ngModel)]="heroName" (ngModelChange)="isExisting(heroinput.value)" />
         </div>
     </div>
     <div class="item-wrapper">
@@ -13,7 +13,7 @@
         </div>
     </div>
 </div>
-<button class="create-button" type="button" (click)="create()" [disabled]="isEmpty(heroName)">Create</button>
+<button class="create-button" type="button" (click)="create()" [disabled]="exists() || isEmpty(heroinput.value)">Create</button>
 @for(heroItem of createdHeroes; track heroItem.id) {
     <div class="message-item">Hero with id: {{ heroItem.id }} and name: {{ heroItem.name }} was created</div>
 }

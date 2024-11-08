@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HeroService } from '../../services/hero.service';
 import { Hero } from '../../interfaces';
@@ -27,6 +27,9 @@ export class CreateHeroComponent {
   /** Contains created heroes. */
   createdHeroes: Hero[] = [];
 
+  /** Flag that indicates if hero name exists. */
+  exists = signal(false);
+
   constructor(private heroService: HeroService) {}
 
   /**
@@ -37,6 +40,14 @@ export class CreateHeroComponent {
     this.createdHeroes.push(hero);
     this.heroName = '';
     this.heroTop = false;
+  }
+
+  /**
+   * Checks whether hero with provided name exists.
+   * @param name - hero name 
+   */
+  isExisting(name: string) {
+    this.exists.set(this.heroService.isHeroExisting(name));
   }
 
   /**

@@ -47,7 +47,7 @@ export class CreateHeroComponent {
    * @param name - hero name 
    */
   isExisting(name: string) {
-    this.exists.set(this.heroService.isHeroExisting(name));
+    this.exists.set(this.heroService.isHeroExisting(name.trim()));
   }
 
   /**
